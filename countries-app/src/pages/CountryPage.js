@@ -1,10 +1,10 @@
-// pages/CountryPage.js
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function CountryPage() {
-  const { countryName } = useParams(); // получаем название страны из URL
+  const { countryName } = useParams(); 
   const [country, setCountry] = useState(null);
 
   useEffect(() => {

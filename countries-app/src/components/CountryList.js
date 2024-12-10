@@ -1,4 +1,3 @@
-// components/CountryList.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -11,12 +10,11 @@ function CountryList({ searchQuery }) {
   useEffect(() => {
     if (!searchQuery) return;
 
-    // Замените URL на актуальный API, который предоставляет данные о странах
     axios
       .get(`https://restcountries.com/v3.1/name/${searchQuery}?page=${page}&limit=10`)
       .then((response) => {
         setCountries(response.data);
-        setTotalPages(Math.ceil(response.data.length / 10)); // вычисляем количество страниц
+        setTotalPages(Math.ceil(response.data.length / 10));
       })
       .catch((error) => console.log(error));
   }, [searchQuery, page]);
@@ -31,7 +29,7 @@ function CountryList({ searchQuery }) {
         ))}
       </ul>
 
-      {/* Пагинация */}
+      {}
       <div>
         <button onClick={() => setPage((prev) => Math.max(prev - 1, 1))}>Previous</button>
         <span>Page {page} of {totalPages}</span>

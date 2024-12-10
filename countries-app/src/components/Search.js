@@ -1,4 +1,3 @@
-// components/Search.js
 import React, { useState } from 'react';
 
 function Search({ onSearch }) {
@@ -9,7 +8,7 @@ function Search({ onSearch }) {
   };
 
   const handleSearch = () => {
-    onSearch(countryName); // вызываем функцию для поиска
+    onSearch(countryName);
   };
 
   return (
